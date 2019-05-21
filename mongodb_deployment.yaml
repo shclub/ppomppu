@@ -1,0 +1,54 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ppomppu-monitoring-db
+  labels:
+    app: ppomppu-monitoring-db
+  namespace: ppomppu-ns
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ppomppu-monitoring-db
+    spec:
+      containers:
+      - name: ppomppu-monitoring-db
+        image: mongo
+        ports:
+        - name: mongo
+          containerPort: 27017
+        securityContext:
+          capabilities:
+            drop:
+              - all
+            add:
+              - CHOWN
+              - SETGID
+              - SETUID
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp-volume
+      volumes:
+        - name: tmp-volume
+          emptyDir:
+            medium: Memory
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ppomppu-monitoring-db
+  labels:
+    app: ppomppu-monitoring-db
+  namespace: ppomppu-ns
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 27017
+    targetPort: 27017
+  selector:
+    app: ppomppu-monitoring-db
+

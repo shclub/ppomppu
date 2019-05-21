@@ -1,0 +1,21 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: ppomppu-monitoring-cron
+  namespace: ppomppu-ns
+spec:
+  schedule: '*/10 * * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: byrnedo/alpine-curl
+            imagePullPolicy: IfNotPresent
+            args:
+            - /bin/sh
+            - -c
+            - curl -X GET -H 'Content-Type:application/json' http://10.99.83.69:5003/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,8000,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,27017,@ppomppu_monitoring,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
+              #            - date; echo "CronJob has been excuted successfully."
+          restartPolicy: OnFailure
