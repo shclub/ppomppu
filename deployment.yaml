@@ -4,7 +4,6 @@ metadata:
   name: ppomppu-monitoring-service
   labels:
     app: ppomppu-monitoring
-  namespace: ppomppu-ns  
 spec:
   ports:
   - port: 5003 
@@ -17,7 +16,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: ppomppu-monitoring-d1
-  namespace: ppomppu-ns
 spec:
   replicas: 2
   template:
