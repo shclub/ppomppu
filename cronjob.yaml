@@ -2,7 +2,6 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: ppomppu-monitoring-cron
-  namespace: ppomppu-ns
 spec:
   schedule: '*/10 * * * *'
   jobTemplate:
