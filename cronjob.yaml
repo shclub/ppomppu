@@ -9,12 +9,11 @@ spec:
       template:
         spec:
           containers:
-          - name: busybox
-            image: yauritux/busybox-curl 
+          - name: ppomppu-monitoring-cron 
+            image: byrnedo/alpine-curl
             imagePullPolicy: IfNotPresent
-            command:
-            - /bin/sh
+            command : ["/bin/sh"]
+            args:
             - -c
-            - curl -X GET -H 'Content-Type:application/json' http://10.99.83.69:5003/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,8000,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,27017,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
-              #            - date; echo "CronJob has been excuted successfully."
+            - curl -X GET -H 'Content-Type:application/json' http://ppomppu-monitoring-service:8001/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,80,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,8999,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
           restartPolicy: OnFailure
