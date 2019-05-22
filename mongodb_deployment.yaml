@@ -4,7 +4,6 @@ metadata:
   name: ppomppu-monitoring-db
   labels:
     app: ppomppu-monitoring-db
-  namespace: ppomppu-ns
 spec:
   replicas: 1
   template:
@@ -43,7 +42,6 @@ metadata:
   name: ppomppu-monitoring-db
   labels:
     app: ppomppu-monitoring-db
-  namespace: ppomppu-ns
 spec:
   ports:
     # the port that this service should serve on
