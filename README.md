@@ -21,3 +21,7 @@ https://www.youtube.com/playlist?list=PLF3s2WICJlqOiymMaTLjwwHz-MSVbtJPQ&app=des
 
 # AI Test
 curl http://localhost:8888/postanal/\?post\=ilovekt
+
+
+# K8S Dashboard
+http://211.253.25.47:34000/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/node?namespace=default
