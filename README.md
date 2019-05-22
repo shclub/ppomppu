@@ -24,4 +24,4 @@ curl http://localhost:8888/postanal/\?post\=ilovekt
 
 
 # K8S Dashboard
-http://211.253.25.47:34000/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/node?namespace=default
+http://xxx.xxx.xxx.xxx:34000/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/node?namespace=default
