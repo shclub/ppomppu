@@ -18,3 +18,6 @@ https://www.youtube.com/playlist?list=PLF3s2WICJlqOiymMaTLjwwHz-MSVbtJPQ&app=des
 
 - docker tag ppomppu_monitor:latest shclub/ppomppu_monitor:latest
 - docker push shclub/ppomppu_monitor:latest
+
+# AI Test
+curl http://localhost:8888/postanal/\?post\=ilovekt
