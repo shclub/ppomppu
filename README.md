@@ -3,6 +3,7 @@
 
 # Docker 기본 사용법
 https://nicewoong.github.io/development/2017/10/09/basic-usage-for-docker/
+https://www.slideshare.net/pyrasis/docker-fordummies-44424016
 
 # k8s 기본 교육 사이트
 https://www.youtube.com/playlist?list=PLF3s2WICJlqOiymMaTLjwwHz-MSVbtJPQ&app=desktop
