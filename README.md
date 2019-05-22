@@ -8,7 +8,7 @@ https://www.slideshare.net/pyrasis/docker-fordummies-44424016
 # k8s 기본 교육 사이트
 https://www.youtube.com/playlist?list=PLF3s2WICJlqOiymMaTLjwwHz-MSVbtJPQ&app=desktop
 
-참고자료 : k8s-excercize.zip
+참고자료 : k8s-exercise.zip
 
 # Docker build 방법
 폴더 안으로 들어가서 아래와 같이 실행 
