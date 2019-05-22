@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ppomppu-anal-service
+  labels:
+    app: ppomppu-anal
+spec:
+  ports:
+  - port: 80
+    name: http
+    targetPort: 8000
+  selector:
+    app: ppomppu-anal
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ppomppu-anal-d2
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ppomppu-anal
+    spec:
+      containers:
+      - name: ppomppu-anal
+        image: naihil/ppomppu:d2
+        resources:
+          requests:
+            cpu: "100m"
+        imagePullPolicy: IfNotPresent #Always
+        ports:
+        - containerPort: 8000
