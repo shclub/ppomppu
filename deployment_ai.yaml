@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: ppomppu-anal
-        image: naihil/ppomppu:d2
+        image: naihil/ppomppu:v2
         resources:
           requests:
             cpu: "100m"
