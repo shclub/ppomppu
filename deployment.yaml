@@ -6,7 +6,7 @@ metadata:
     app: ppomppu-monitoring
 spec:
   ports:
-  - port: 5003 
+  - port: 8001 
     name: http
     targetPort: 5003 
   selector:
@@ -32,4 +32,3 @@ spec:
         imagePullPolicy: IfNotPresent #Always
         ports:
         - containerPort: 5003 
-
