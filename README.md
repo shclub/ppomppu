@@ -26,6 +26,9 @@ curl http://localhost:8888/postanal/\?post\=ilovekt
 # K8S Dashboard
 http://xxx.xxx.xxx.xxx:34000/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/node?namespace=default
 
-# docker-compose.yaml
-test : curl -X GET -H 'Content-Type:application/json' http://localhost:8001/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,8000,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,27017,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
+# k8s test
+curl -X GET -H 'Content-Type:application/json'  http://10.110.66.17:8001/ppomppu_monitor -d  '{"param_list" : "ppomppu-anal-service,80,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,8999,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
+
+# docker-compose test
+curl -X GET -H 'Content-Type:application/json' http://localhost:8001/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,8000,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,27017,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
 
