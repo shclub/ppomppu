@@ -27,30 +27,5 @@ curl http://localhost:8888/postanal/\?post\=ilovekt
 http://xxx.xxx.xxx.xxx:34000/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/node?namespace=default
 
 # docker-compose.yaml
-version: '3'
-
-services:
-  ppomppu_monitor:
-    image: shclub/ppomppu_monitor:latest
-    ports:
-     - "8001:5003"
-    depends_on:
-     - ppomppu-monitoring-db
-     - ppomppu-anal-service
-
-  ppomppu-monitoring-db:
-    image: mongo
-    ports:
-      - "8999:27017"
-    volumes:
-      - 'mongodb_data:/test'
-
-  ppomppu-anal-service:
-    image: naihil/ppomppu:v2
-    ports:
-     - "80:8000"
-
-volumes:
-  mongodb_data:
-    driver: local
+test : curl -X GET -H 'Content-Type:application/json' http://localhost:8001/ppomppu_monitor -d '{"param_list":"ppomppu-anal-service,8000,/postanal/?post=,0,Y,KT,Y,ppomppu-monitoring-db,27017,50026600,676003420:AAH7fq_HZzxbmWurz-IWdeUh6vZN1QTQxsE"}'
 
